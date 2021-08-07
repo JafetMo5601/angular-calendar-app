@@ -1,0 +1,30 @@
+<div class="container-fluid" id="calendar">
+    <div class="row calendar-view">
+        <div class="col-3">
+            <!-- <span id="calendar-title">Months</span> -->
+        </div>
+        <div class="col-9">
+            <div class="row" id="today-date">
+                <p class="current-date">{{ viewDate | date: 'LLL dd, E' }}</p>
+            </div>
+            <div class="row justify-content-center" id="calendar">
+                <div [ngSwitch]="view" class="col-10">
+                    <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="list_appointments"
+                        [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                        (eventClicked)="eventClicked($event)"
+                        (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-month-view>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="row justify-content-center" id="list-tasks">
+                    <div class="col-10">
+                        <button mat-mini-fab color="primary" aria-label="Create new appointment.">
+                            <mat-icon (click)="create_appointment()">add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

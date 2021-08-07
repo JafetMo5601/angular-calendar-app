@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="row list-appointments">
+        <div class="col-3">
+            <span>Months</span>
+        </div>
+        <div id="list-content" class="col-9 d-flex justify-content-center text-center">
+            <div class="appointments-container">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel *ngFor="let appointment of list_appointments">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{ appointment.title }}
+                            </mat-panel-title>
+                            <mat-panel-description *ngIf="appointment.allDay">
+                                Event occurs all day
+                            </mat-panel-description>
+                            <mat-panel-description *ngIf="!appointment.allDay">
+                                Starts at: {{ appointment.start }}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-divider></mat-divider>
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="row justify-content-between">
+                                    <div class="col-4">
+                                        Start at:
+                                    </div>
+                                    <div class="col-5">
+                                        <mat-form-field appearance="legacy">
+                                            <input matInput [disabled]="appointment.allDay"
+                                                [ngxMatDatetimePicker]="start"
+                                                placeholder="Choose the start of the appoitment"
+                                                [(ngModel)]="appointment.start">
+                                            <mat-datepicker-toggle matSuffix [for]="$any(start)">
+                                            </mat-datepicker-toggle>
+                                            <ngx-mat-datetime-picker #start [showSpinners]="false">
+                                                <ng-template>
+                                                    <span>OK</span>
+                                                </ng-template>
+                                            </ngx-mat-datetime-picker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row justify-content-between">
+                                    <div class="col-4">
+                                        Ends at:
+                                    </div>
+                                    <div class="col-5">
+                                        <mat-form-field appearance="legacy">
+                                            <input matInput [disabled]="appointment.allDay" [ngxMatDatetimePicker]="end"
+                                                placeholder="Choose the end of the appoitment"
+                                                [(ngModel)]="appointment.ends">
+                                            <mat-datepicker-toggle matSuffix [for]="$any(end)"></mat-datepicker-toggle>
+                                            <ngx-mat-datetime-picker #end [showSpinners]="false">
+                                                <ng-template>
+                                                    <span>OK</span>
+                                                </ng-template>
+                                            </ngx-mat-datetime-picker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <mat-form-field appearance="legacy" class="full-width">
+                                    <mat-label>Notes</mat-label>
+                                    <input matInput [(ngModel)]="appointment.notes">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-8">
+                                <mat-form-field appearance="legacy" class="full-width">
+                                    <mat-label>Location</mat-label>
+                                    <input matInput [(ngModel)]="appointment.location">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button mat-icon-button class="btn btn-danger" id="delete-btn"
+                            (click)="deleteAppointment(appointment.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>

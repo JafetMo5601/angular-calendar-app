@@ -1,0 +1,89 @@
+* {
+    letter-spacing: 0.1rem;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-selection-list {
+    height: 100%;
+    width: 300px;
+    background-color: #16697a;
+  }
+  
+  mat-toolbar {
+    background: #004a9f;
+    color: white;
+  }
+  
+  mat-sidenav {
+    width: 300px;
+    background: #16697a;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  mat-button-toggle.menu-button {
+      background-color: transparent;
+      border: transparent;
+      color: white;
+      padding: 30px;
+      width: 90%;
+      border-radius: 0 500px 500px 0;
+      font-size: 1rem;
+      float: left;
+      font-weight: 300;
+      letter-spacing: 0.07rem;
+      -webkit-transition: all 0.7s ease-out;
+      -moz-transition: all 0.7s ease-out;
+      -o-transition: all 0.7s ease-out;
+      transition: all 0.7s ease-out;
+  }
+  
+  .menu-button:hover {
+    color: #635a6d;
+    background-color: #e1e5f2;
+    cursor: pointer;
+  }
+  
+  .menu-button mat-icon {
+    margin-right: 15px;
+  }
+  
+  .profile-wrapper {
+    margin: 4em 0 6em 0;
+  }
+  
+  .avatar {
+    margin: 50px 0 25px 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    font-weight: 300;
+    letter-spacing: 0.07rem;
+  }
+  
+  mat-sidenav-container {
+    background-color: #E1E5F2;
+  }
+  
+  mat-sidenav-content {
+    height: 100%;
+    font-size: 2rem;
+    color: lightgray;
+  }
+  
+  .mat-button-toggle-standalone, .mat-button-toggle-group {
+    display: block;
+    border: none;
+  }

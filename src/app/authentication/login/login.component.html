@@ -1,0 +1,29 @@
+<div class="login-form-wrapper">
+    <h1>Create a Free Account</h1>
+    <h3>Use your social networks</h3>
+    <div class="social-container">
+        <a id="facebook-icon" class="btn btn-primary btn-lg btn-floating" href="#!" role="button">
+            <mat-icon>facebook</mat-icon>
+        </a>
+        <a id="twitter-icon" class="btn btn-primary btn-lg btn-floating" href="#!" role="button">
+            <mat-icon>facebook</mat-icon>
+        </a>
+        <a id="google-icon" class="btn btn-primary btn-lg btn-floating" href="#!" role="button">
+            <mat-icon>facebook</mat-icon>
+        </a>
+    </div>
+    <span>or use your details for registration</span>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <button>Sign Up</button>
+    </form>
+</div>

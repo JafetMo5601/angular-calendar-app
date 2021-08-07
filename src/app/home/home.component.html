@@ -1,0 +1,39 @@
+<mat-sidenav-container>
+    <mat-sidenav class="mat-elevation-z8" mode="side" opened="true">
+        <div class="profile-wrapper">
+            <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+            <h4 class="name">{{name}}</h4>
+        </div>
+        <div class="menu-button-wrapper">
+            <mat-button-toggle-group>
+                <a routerLink="calendar">
+                    <mat-button-toggle mat-button class="menu-button">
+                        <mat-icon>calendar_today</mat-icon>
+                        <span>Calendar</span>
+                    </mat-button-toggle>
+                </a>
+                <a routerLink="appointments">
+                    <mat-button-toggle mat-button class="menu-button">
+                        <mat-icon>pending_actions</mat-icon>
+                        <span>Appointments</span>
+                    </mat-button-toggle>
+                </a>
+                <a routerLink="coming-soon">
+                    <mat-button-toggle mat-button class="menu-button">
+                        <mat-icon>event</mat-icon>
+                        <span>Events</span>
+                    </mat-button-toggle>
+                </a>
+                <a routerLink="coming-soon">
+                    <mat-button-toggle mat-button class="menu-button">
+                        <mat-icon>local_airport</mat-icon>
+                        <span>Vacations</span>
+                    </mat-button-toggle>
+                </a>
+            </mat-button-toggle-group>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

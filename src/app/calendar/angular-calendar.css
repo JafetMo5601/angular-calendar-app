@@ -1,0 +1,189 @@
+.cal-month-view .cal-header {
+  text-align: center;
+  color: #25537D;
+  font-weight: bolder;
+}
+
+.cal-month-view .cal-header .cal-cell {
+  padding: 5px 0;
+  font-size: 1rem;
+  width: 3ch;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+}
+
+.cal-month-view .cal-cell-top {
+  min-height: 30px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.cal-month-view .cal-cell-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+}
+
+.cal-month-view .cal-cell {
+  float: left;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.cal-month-view .cal-cell .cal-event {
+  pointer-events: all !important;
+}
+
+.cal-month-view .cal-day-cell {
+  min-width: 50px;
+  min-height: 50px;
+}
+@media all and (-ms-high-contrast: none) {
+  .cal-month-view .cal-day-cell {
+    display: block;
+  }
+}
+
+.cal-month-view .cal-day-cell:not(:last-child) {
+  border-right: 1px solid;
+}
+
+.cal-month-view .cal-days .cal-cell-row {
+  border-bottom: 1px solid;
+}
+
+.cal-month-view .cal-day-badge {
+  display: none;
+}
+
+.cal-month-view .cal-day-number {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #584B66;
+}
+
+.cal-month-view .cal-events {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  margin: 3px;
+  line-height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.cal-month-view .cal-event {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 2px;
+}
+
+.cal-month-view .cal-day-cell.cal-in-month.cal-has-events {
+  cursor: pointer;
+}
+
+.cal-month-view .cal-day-cell.cal-out-month .cal-day-number {
+  opacity: 0.1;
+  cursor: default;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+  font-size: 1.rem;
+}
+
+.cal-month-view .cal-open-day-events {
+  padding: 15px;
+}
+
+.cal-month-view .cal-open-day-events .cal-event {
+  position: relative;
+  top: 2px;
+}
+
+.cal-month-view .cal-out-month .cal-day-badge,
+.cal-month-view .cal-out-month .cal-event {
+  opacity: 0.3;
+}
+
+.cal-month-view .cal-draggable {
+  cursor: move;
+}
+
+.cal-month-view .cal-drag-active * {
+  pointer-events: none;
+}
+
+.cal-month-view .cal-event-title {
+  font-size: large;
+  cursor: pointer;
+}
+.cal-month-view .cal-event-title:hover {
+  text-decoration: none;
+}
+
+.cal-month-view {
+  background-color: transparent;
+}
+
+
+.cal-month-view .cal-cell-row .cal-cell:hover,
+.cal-month-view .cal-cell.cal-has-events.cal-open {
+  background-color: #B9D2D7;
+}
+.cal-month-view .cal-days {
+  border-color: transparent;
+}
+.cal-month-view .cal-day-cell:not(:last-child) {
+  border-right-color: transparent;
+
+}
+.cal-month-view .cal-days .cal-cell-row {
+  border-bottom-color: transparent;
+}
+
+.cal-month-view .cal-event {
+  background-color: #1e90ff;
+  border-color: transparent;
+  color: #fff;
+}
+
+.cal-month-view .cal-day-cell.cal-weekend .cal-day-number {
+  color: #8b0000;
+}
+
+.cal-month-view .cal-day-cell.cal-today {
+  background-color: #B9D2D7;
+}
+.cal-month-view .cal-day-cell.cal-drag-over {
+  background-color: #e0e0e0 !important;
+}
+.cal-month-view .cal-open-day-events {
+  text-align: left;
+  color: #584B66;
+}

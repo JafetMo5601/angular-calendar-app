@@ -1,0 +1,35 @@
+.container-fluid {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.full-width {
+  width: 100%;    
+}
+
+.list-appointments {
+  height: 100%;
+}
+
+.col-9 {
+  text-align: center;
+  align-items: center;
+  padding: 10%;
+  padding-left: 20%;
+  padding-top: 12%;
+  border-radius: 1000px 0 0 1000px;
+  background-color: #82c0cc;
+}
+
+.appointments-container {
+  width: 100%;
+  max-width: 700px;
+}
+
+#delete-btn {
+  float: right;
+}
+
+mat-divider {
+  margin-bottom: 2.5rem;
+}
