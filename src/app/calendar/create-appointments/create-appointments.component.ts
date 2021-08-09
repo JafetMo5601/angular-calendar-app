@@ -4,6 +4,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { AppointmentService } from 'src/app/http-services/appointments/appointment.service';
 import { TokenStorageService } from 'src/app/http-services/authorization/token-storage.service';
+import { ConfirmationPopUpService } from 'src/app/shared/confirmation-pop-up/confirmation-pop-up.service';
 
 @Component({
   selector: 'app-create-appointments',
@@ -58,6 +59,23 @@ export class CreateAppointmentsComponent {
   }
 
   onSubmit() {
+    this.accept()
+  }
+
+  public decline() {
+    this.activeModal.close(false);
+  }
+
+  public accept() {
+    this.createAppointment()
+    this.activeModal.close(true);
+  }
+
+  public dismiss() {
+    this.activeModal.dismiss();
+  }
+
+  createAppointment() {
     this.appointmentService.createAppointment(
       this.newAppoitmentForm.get('title')?.value,
       this.newAppoitmentForm.get('location')?.value,
@@ -69,7 +87,6 @@ export class CreateAppointmentsComponent {
     ).subscribe(
       data => {
         console.log(data);
-        this.closeModal();
         window.location.reload();
       },
       err => {
@@ -77,10 +94,5 @@ export class CreateAppointmentsComponent {
       }
     );
   }
-
-  closeModal(): any {
-    this.activeModal.close();
-  }
-
 }
 

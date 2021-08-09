@@ -1,7 +1,7 @@
 <div class="modal-header">
   <h2 class="modal-title" style="margin-bottom: 0;">Edit modal</h2>
-  <button type="button" class="btn btn-outline-danger close-btn"
-        (click)="activeModal.dismiss('Cross click')">&times;</button>
+  <button type="button" class="btn btn-outline-danger close-btn" (click)="dismiss()">&times;
+  </button>
 </div>
 <div class="modal-body container" ngbAutofocus>
   <mat-card>
@@ -24,7 +24,8 @@
     <div class="row justify-content-evenly dates">
       <div class="col-6">
         <mat-form-field class="datetime-picker">
-          <input matInput [disabled]="appointment.allDay" [ngxMatDatetimePicker]="start" placeholder="Choose the start of the appoitment" [(ngModel)]="appointment.start">
+          <input matInput [disabled]="appointment.allDay" [ngxMatDatetimePicker]="start"
+            placeholder="Choose the start of the appoitment" [(ngModel)]="appointment.start">
           <mat-datepicker-toggle matSuffix [for]="$any(start)"></mat-datepicker-toggle>
           <ngx-mat-datetime-picker #start [showSpinners]="false">
             <ng-template>
@@ -35,7 +36,8 @@
       </div>
       <div class="col-6">
         <mat-form-field class="datetime-picker">
-          <input matInput [disabled]="appointment.allDay" [ngxMatDatetimePicker]="ends" placeholder="Choose the end of the appoitment" [(ngModel)]="appointment.ends">
+          <input matInput [disabled]="appointment.allDay" [ngxMatDatetimePicker]="ends"
+            placeholder="Choose the end of the appoitment" [(ngModel)]="appointment.ends">
           <mat-datepicker-toggle matSuffix [for]="$any(ends)"></mat-datepicker-toggle>
           <ngx-mat-datetime-picker #ends [showSpinners]="false">
             <ng-template>
@@ -74,8 +76,8 @@
     </div>
   </mat-expansion-panel>
 
-  <div class="btns text-end">
-    <button mat-raised-button color="primary" (click)="passBack()">Save and exit</button>
-    <button mat-raised-button class="btn btn-outline-primary" (click)="activeModal.close('Close click')">Cancel</button>
+  <div class="modal-footer">
+    <button mat-raised-button type="button" class="btn btn-danger" (click)="decline()">Cancel</button>
+    <button mat-raised-button type="button" class="btn btn-primary" (click)="accept()">Save</button>
   </div>
 </div>

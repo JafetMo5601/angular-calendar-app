@@ -1,11 +1,11 @@
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, TemplateRef } from '@angular/core';
 import { AuthorizationService } from 'src/app/http-services/authorization/authorization.service';
-import { showMessage } from 'igniteui-angular/lib/core/deprecateDecorators';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ViewChild } from '@angular/core';
-import { SuccessfullyComponent } from 'src/app/shared/successfully/successfully.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Component } from '@angular/core';
 
+import { CustomPopUpComponent } from './../../shared/custom-pop-up/custom-pop-up.component';
+import { CustomPopUpService } from 'src/app/shared/custom-pop-up/custom-pop-up.service';
 
 @Component({
   selector: 'app-register',
@@ -40,10 +40,16 @@ export class RegisterComponent {
   errorMessage = '';
 
   constructor(
-    private modal: NgbModal,
-    private authService: AuthorizationService,
-    public modalService: NgbModal,
+    private customPopUpService: CustomPopUpService,
+    private authService: AuthorizationService
   ) { }
+
+  public openCustomPopUp(message: string) {
+    this.customPopUpService.confirm(
+      'New user', 
+      message
+      );
+  }
 
   onSubmit() {
     this.authService.register(
@@ -57,8 +63,7 @@ export class RegisterComponent {
       data => {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.showMessage();
-        console.log(data);
+        this.openCustomPopUp(data.message);
       },
       err => {
         this.errorMessage = err.error.message;
@@ -66,9 +71,4 @@ export class RegisterComponent {
       }
     );
   }
-
-  showMessage() {
-    this.modalService.open(SuccessfullyComponent, {centered: true});
-  }
-
 }

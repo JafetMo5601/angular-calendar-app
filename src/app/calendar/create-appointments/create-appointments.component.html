@@ -1,7 +1,7 @@
 <div class="modal-header">
     <h2 class="modal-title" style="margin-bottom: 0;">Create new appointment</h2>
-    <button type="button" class="btn btn-outline-danger close-btn"
-        (click)="activeModal.dismiss('Cross click')">&times;</button>
+    <button type="button" class="btn btn-outline-danger close-btn" (click)="dismiss()">&times;
+    </button>
 </div>
 <div class="modal-body container" ngbAutofocus>
     <form [formGroup]="newAppoitmentForm" (ngSubmit)="onSubmit()" novalidate>
@@ -77,10 +77,9 @@
             </div>
         </mat-expansion-panel>
 
-        <div class="btns text-end">
-            <button mat-raised-button color="primary">Add</button>
-            <button mat-raised-button class="btn btn-outline-primary" (click)="closeModal()">Cancel</button>
+        <div class="modal-footer">
+            <button mat-raised-button type="button" class="btn btn-danger" (click)="decline()">Cancel</button>
+            <button mat-raised-button type="button" class="btn btn-primary" (click)="accept()">Add</button>
         </div>
-
     </form>
 </div>
