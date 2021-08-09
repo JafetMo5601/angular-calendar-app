@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/http-services/authorization/token-storage.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,7 +15,9 @@ const httpOptions = {
 export class AuthorizationService {
 
     constructor(
-        private http: HttpClient
+        private tokenStrg: TokenStorageService,
+        private http: HttpClient,
+        private router: Router
         ) { }
 
     register(
@@ -38,4 +41,10 @@ export class AuthorizationService {
     //     const token = this.token.getToken();
     //     return !this.jwtHelper.isTokenExpired(token);
     // }
+
+    logout(): void {
+        this.tokenStrg.removeToken();
+        this.tokenStrg.removeUser();
+        this.router.navigateByUrl("/auth");
+    }
 }
