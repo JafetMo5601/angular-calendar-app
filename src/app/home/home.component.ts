@@ -1,3 +1,4 @@
+import { AuthorizationService } from 'src/app/http-services/authorization/authorization.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   title = 'Calendar';
   name: String = 'Jafet Mora Ugalde';
@@ -19,10 +20,17 @@ export class HomeComponent implements OnInit {
     { icon: 'local_airport', description: 'Vacations' }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthorizationService
+    ) { }
 
-  ngOnInit() {
-    this.router.navigate(['/home/calendar']);
+  // ngOnInit() {
+  //   this.router.navigate(['/home/calendar']);
+  // }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
