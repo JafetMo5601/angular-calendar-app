@@ -26,6 +26,10 @@ export class TokenStorageService {
     return (token !== 'undefined' && token !== null) ? token : ""  as string;
   }
 
+  public removeToken() {
+    localStorage.removeItem(TOKEN_KEY);
+  }
+
   public saveUser(user: any): void {
     localStorage.removeItem(USER_KEY);
     localStorage.setItem(USER_KEY, JSON.stringify(user));
@@ -37,5 +41,9 @@ export class TokenStorageService {
       return JSON.parse(user);
     }
     return {};
+  }
+
+  public removeUser(): void {
+    localStorage.removeItem(USER_KEY);
   }
 }
