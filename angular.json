@@ -52,13 +52,40 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
+                }
+              ]
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
                 }
               ]
             }
@@ -73,6 +100,9 @@
           "configurations": {
             "production": {
               "browserTarget": "Calendar:build:production"
+            },
+            "development": {
+              "browserTarget": "Calendar:build:development"
             }
           }
         },
@@ -121,7 +151,10 @@
           "configurations": {
             "production": {
               "devServerTarget": "Calendar:serve:production"
-            }
+            },
+            "development": {
+              "devServerTarget": "Calendar:serve:development"
+            } 
           }
         }
       }
