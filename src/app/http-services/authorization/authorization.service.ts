@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -28,13 +29,13 @@ export class AuthorizationService {
         password: string,
         role: number[]
     ): Observable<any> {
-        return this.http.post<any>('api/auth/register', {
+        return this.http.post<any>(environment.apiUrl + 'auth/register', {
             name, last, email, username, password, role
         }, httpOptions);
     }
 
     authenticate(username: string, password: string): Observable<any> {
-        return this.http.post<any>('api/auth/authenticate', { username, password }, httpOptions);
+        return this.http.post<any>(environment.apiUrl + 'auth/authenticate', { username, password }, httpOptions);
     }
 
     // isAuthenticated(): boolean {
