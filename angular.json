@@ -62,30 +62,11 @@
                 }
               ]
             },
-            "development": {
+            "dev": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.dev.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "2mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "1mb",
-                  "maximumError": "1mb"
                 }
               ]
             }
@@ -94,15 +75,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Calendar:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "Calendar:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "Calendar:build:production"
             },
             "development": {
-              "browserTarget": "Calendar:build:development"
+              "browserTarget": "Calendar:build:dev",
+              "proxyConfig": "src/dev-proxy.conf.json"
             }
           }
         },
