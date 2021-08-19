@@ -1,3 +1,4 @@
+import { TokenStorageService } from 'src/app/http-services/authorization/token-storage.service';
 import { AuthorizationService } from 'src/app/http-services/authorization/authorization.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent {
 
   title = 'Calendar';
-  name: String = 'Jafet Mora Ugalde';
+  name: string = this.tokenStg.getUserName();
 
   options: any[] = [
     { icon: 'calendar_today', description: 'Calendar' },
@@ -22,12 +23,9 @@ export class HomeComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthorizationService
+    private authService: AuthorizationService,
+    private tokenStg: TokenStorageService
     ) { }
-
-  // ngOnInit() {
-  //   this.router.navigate(['/home/calendar']);
-  // }
 
   logout() {
     this.authService.logout();

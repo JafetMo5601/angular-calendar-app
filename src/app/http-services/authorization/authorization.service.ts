@@ -38,11 +38,6 @@ export class AuthorizationService {
         return this.http.post<any>(environment.apiUrl + 'auth/authenticate', { username, password }, httpOptions);
     }
 
-    // isAuthenticated(): boolean {
-    //     const token = this.token.getToken();
-    //     return !this.jwtHelper.isTokenExpired(token);
-    // }
-
     logout(): void {
         this.tokenStrg.removeToken();
         this.tokenStrg.removeUser();
