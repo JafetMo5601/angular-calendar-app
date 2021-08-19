@@ -1,7 +1,7 @@
 <mat-sidenav-container>
     <mat-sidenav class="mat-elevation-z8" mode="side" opened="true">
         <div class="profile-wrapper">
-            <img (click)="logout()" class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+            <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
             <h4 class="name">{{name}}</h4>
         </div>
         <div class="menu-button-wrapper">
@@ -31,6 +31,15 @@
                     </mat-button-toggle>
                 </a>
             </mat-button-toggle-group>
+        </div>
+
+        <div class="logout-button">
+            <a routerLink="calendar">
+                <mat-button-toggle (click)="logout()" mat-button class="logout-button">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>
+                </mat-button-toggle>
+            </a>
         </div>
     </mat-sidenav>
     <mat-sidenav-content>

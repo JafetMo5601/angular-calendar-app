@@ -87,3 +87,27 @@
     display: block;
     border: none;
   }
+
+  mat-button-toggle.logout-button {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    font-size: 1rem;
+    float: left;
+    font-weight: 300;
+    letter-spacing: 0.07rem;
+}
+
+.logout-button mat-icon {
+  margin-right: 15px;
+}
+
+.button-content {
+  margin: 0;
+  width: 50%;
+}
