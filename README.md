@@ -1,27 +1,43 @@
-# Calendar
+# Calendar GUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+## Description
 
-## Development server
+This project is part of a college full-stack web application that work as the Front-End or the GUI of the Calendar App.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* TypeScript 4.1.5
+* Angular 11
+* Bootstrap 5.0.2
+* node 14.15.4
+* npm 6.14.10
 
-## Build
+### Installing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To install the dependencies run: 
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Executing program
 
-## Running end-to-end tests
+To run the application run the following command from the root directory: 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm run start:dev
+```
 
-## Further help
+Or run `ng serve` for initialice a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Help
+
+If you have any problem or doubt feel free to open a issue.
+
+## Authors
+
+Portfolio of the contributor
+
+[Jafet Mora Ugalde](https://jafet-portfolio.herokuapp.com/)
