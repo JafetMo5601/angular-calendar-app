@@ -4,6 +4,7 @@ import { NgxMatMomentModule } from '@angular-material-components/moment-adapter'
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -40,9 +41,11 @@ import { NgModule } from '@angular/core';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
+    CarouselModule,
     MatCardModule,
     MatIconModule,
     MatListModule,
+    WavesModule,
   ],
   providers: [
     MatDatepickerModule,
