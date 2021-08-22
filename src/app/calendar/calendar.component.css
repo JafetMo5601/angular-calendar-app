@@ -1,17 +1,19 @@
+.content {
+  height: 100%;
+}
+
+.content-vertical {
+  height: 100%;
+}
+
 .container-fluid {
   height: 100%;
   overflow-y: hidden;
-}
-
-.calendar-view {
-  height: 100%;
+  overflow-x: hidden;
 }
 
 .col-9 {
   text-align: center;
-  padding: 10%;
-  padding-left: 20%;
-  padding-top: 12%;
   border-radius: 1000px 0 0 1000px;
   background-color: #82c0cc;
 }
@@ -23,11 +25,7 @@
 }
 
 #today-date {
-  margin-bottom: 2.2em;
-}
-
-#calendar {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 #list-tasks {
@@ -38,4 +36,73 @@
 
 button {
   float: right;
+}
+
+.calendar-view {
+  width: 28em;
+  max-width: 30em;
+  min-width: 18em;
+  margin-left: 10%;
+}
+
+.middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #635a6d;
+  height: 25%;
+}
+
+.years {
+  height: 10%;
+}
+
+.months {
+  height: 45%;
+}
+
+.copyright {
+  color: #635a6d;
+  height: 20%;
+}
+
+.title, 
+.copyright {
+  position: relative;
+}
+
+.title span {
+  position: absolute;
+  left: 20%;
+}
+
+.copyright span {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.year {
+  display: none;
+  color: #635A6D;
+}
+
+.prev, .next {
+  cursor: pointer;
+  color: #C4C4C4;
+  padding: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 100%;
+}
+
+.years-slides-container {
+  text-align: center;
 }
