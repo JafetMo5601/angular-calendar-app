@@ -19,11 +19,14 @@
                     </div>
                 </div>
                 <div class="months middle">
-                    <mdb-carousel>
-                        <mdb-carousel-item *ngFor="let month of months">
-                            <a>{{ month }}</a>
-                        </mdb-carousel-item>
-                    </mdb-carousel>
+                    <div class="igx-calendar__body">
+                        <div class="igx-calendar__body-column">
+                            <!-- <span class="igx-calendar__year" (yearSelection)="selectYear($event)"
+                                *ngFor="let month of months; trackBy: yearTracker">
+                                {{ month }}
+                            </span> -->
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">
                     <span>Jafet Projects @2021</span>
@@ -37,10 +40,9 @@
                 </div>
                 <div class="row justify-content-center" id="calendar">
                     <div [ngSwitch]="view" class="col-11">
-                        <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate"
-                            [events]="list_appointments" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
-                            (dayClicked)="dayClicked($event.day)" (eventClicked)="eventClicked($event)"
-                            (eventTimesChanged)="eventTimesChanged($event)">
+                        <mwl-calendar-month-view [viewDate]="viewDate" [events]="list_appointments" [refresh]="refresh"
+                            [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                            (eventClicked)="eventClicked($event)" (eventTimesChanged)="eventTimesChanged($event)">
                         </mwl-calendar-month-view>
                     </div>
                 </div>
